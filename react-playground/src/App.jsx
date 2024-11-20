@@ -5,17 +5,35 @@ import peaks from '/peaks.svg';
 import ssspill from '/ssspill.svg';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function HeadBar() {
   return (
     <>
-      <div id="main-content">
-        <h1 class="dont-panic">Don't Panic!</h1>
-        <img src={peaks} className="bg-svg" width="100%" height="33%" alt="peaks-bg" />
+      <div id="head-bar">
       </div>
-      
     </>
+  )
+}
+function SideBar() {
+  return (
+    <>
+      <div id="side-bar">
+      </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <div id="site-wrap">
+      <HeadBar></HeadBar>
+      <div id="content-wrap">
+        <SideBar></SideBar>
+        <div id="main-content">
+          <h1 class="dont-panic">Don't Panic!</h1>
+          <img src={peaks} className="bg-svg" alt="background" />
+        </div>
+      </div>
+    </div>
   )
 }
 
