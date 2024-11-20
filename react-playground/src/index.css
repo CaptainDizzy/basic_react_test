@@ -11,7 +11,7 @@ html, body {
   background-color: #323232;
   overflow-x: hidden;
   color: var(--text-color);
-  font-size: 18px;
+  font-size: 16px;
 }
 body {
   margin: 0;
@@ -34,7 +34,19 @@ ul {
 list-style-type: none;
 }
 h1 {
-font-size: 40px;
+font-size: 2.25em;
+margin-bottom: 0.33em;
+color: var(--title-color)
+}
+h2 {
+font-size: 1.75em;
+margin-bottom: 0.25em;
+color: var(--title-color)
+}
+h3 {
+font-size: 1.25em;
+margin-bottom: 0.25em;
+color: var(--title-color)
 }
 hr {
 box-sizing: content-box;
@@ -95,7 +107,8 @@ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focus
 outline: 1px dotted ButtonText;
 }
 fieldset {
-padding: 0.35em 0.75em 0.625em;
+  border: none !important;
+  margin: 1em 0;
 }
 legend {
 box-sizing: border-box;

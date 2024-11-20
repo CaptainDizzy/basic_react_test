@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import pdilogo from '/pdi-logo.png'
-import peaks from '/peaks.svg';
-import ssspill from '/ssspill.svg';
+import pixels from '/pixel-bg.svg';
 import './App.css'
 
 function HeadBar() {
@@ -53,9 +52,22 @@ function App() {
       <div id="content-wrap">
         <SideBar></SideBar>
         <div id="main-content">
-          <h1>Don't Panic!</h1>
-          <p>This is just a test.</p>
-          <img src={peaks} className="bg-svg" alt="background" />
+          <h1>Forum to JSON Submission Test</h1>
+          <p>The form below should be exported as a JSON file somewhere upon submission. In theory, at least...</p>
+
+          <div class="form-wrap">
+            <form>
+              <fieldset>
+                <label>Name:</label><br />
+                <input type="text" id="name" name="name"></input><br />
+                <label>Primary Color (Hex):</label><br />
+                <input type="text" id="primarycolor" name="primarycolor" placeholder="#000000"></input>
+                <input type="submit"></input>
+              </fieldset>
+            </form>
+          </div>
+
+          <img src={pixels} className="bg-svg" alt="background" />
         </div>
       </div>
     </div>
