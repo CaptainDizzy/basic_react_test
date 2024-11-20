@@ -29,7 +29,8 @@ function App() {
       <div id="content-wrap">
         <SideBar></SideBar>
         <div id="main-content">
-          <h1 class="dont-panic">Don't Panic!</h1>
+          <h1>Don't Panic!</h1>
+          <p>This is just a test.</p>
           <img src={peaks} className="bg-svg" alt="background" />
         </div>
       </div>

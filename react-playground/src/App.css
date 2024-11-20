@@ -33,21 +33,24 @@
 
 #content-wrap {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100vw;
   height: calc(100vh - var(--header-height))
 }
 
 #main-content {
   position: relative;
-  display: flex;
+  display: block;
   background-color: var(--content-bg);
   width: calc(100% - var(--sb-open));
   height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 25px;
+}
+
+#main-content h1 {
+  color: var(--primary-color)
 }
 
 #side-bar {
@@ -55,7 +58,7 @@
   display: inline-block;
   background-color: #ffffff;
   width: var(--sb-open);
-  height: 100%
+  height: 100%;
 }
 
 #head-bar {
@@ -80,8 +83,7 @@
   --primary-color: #07003D;
   --secondary-color: #6033ff;
   --tertiary-color: #ff8008;
-  --title-color: #858585;
-  --text-color: #efefef;
+  --text-color: #323232;
   --ghost-block-bg: #585858;
   --bg-primary-light: #323232;
   --bg-primary-dark: #232323;
