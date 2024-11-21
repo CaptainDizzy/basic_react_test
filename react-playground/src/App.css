@@ -34,17 +34,20 @@ form label {
   display: inline-block;
   margin-bottom: 0.25em;
 }
-form .submit-btn {
+form button {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.25em;
   padding: 0.25em 0.75em;
   border-radius: 12px;
-  border-color: none;
+  border: none;
   background-color: var(--primary-color);
   color: #ffffff;
   font-weight: 600;
 }
+  form button.secondary-btn {
+    background-color: var(--secondary-color);
+  }
 
 .bg-svg {
   display: block;

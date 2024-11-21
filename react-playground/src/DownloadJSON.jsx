@@ -1,7 +1,8 @@
 import React from 'react';
 
 const DownloadJSON = ({ data, fileName }) => {
-    const downloadJSON = () => {
+    const downloadJSON = (e) => {
+        e.preventDefault();
         const jsonData = new Blob([JSON.stringify(data)], { type: 'application/json' });
         const jsonURL = URL.createObjectURL(jsonData);
         const link = document.createElement('a');
@@ -13,7 +14,7 @@ const DownloadJSON = ({ data, fileName }) => {
     };
 
     return (
-        <button onClick={downloadJSON}>Download JSON</button>
+        <button className="secondary-btn" onClick={downloadJSON}>Download JSON</button>
     );
 }
 

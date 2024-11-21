@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DownloadJSON from './DownloadJSON';
+import SaveData from './SaveData'
 import pdilogo from '/pdi-logo.png';
 import pixels from '/pixel-bg.svg';
 import './App.css';
@@ -53,10 +54,13 @@ export default function App() {
     color: ''
   })
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert('Button Click!');
-  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    for (let [key, value] of formData.entries()) {
+      alert(`${key}: ${value}`);
+    }
+  };
 
   return (
     <div id="site-wrap">
@@ -68,26 +72,16 @@ export default function App() {
           <p>The form below should be exported as a JSON file somewhere upon submission. In theory, at least...</p>
 
           <div className="form-wrap">
-            <form>
-              <fieldset>
-                <label>Name:</label><br />
-                <input type="text" id="name" name="name" 
-                onChange={e => setData({
-                      name: e.target.value,
-                      color: data.color
-                    })}>
-                </input><br />
+            <form onSubmit={SaveData}>
+              <label>Name:</label><br />
+              <input type="text" id="name" name="name">
+              </input><br />
 
-                <label>Primary Color (Hex):</label><br />
-                <input type="text" id="primarycolor" name="primarycolor" placeholder="#000000" 
-                  onChange={e => setData({
-                      name: data.name,
-                      color: e.target.value
-                    })}>
-                </input>
-                {/* <button className="submit-btn" onClick={handleSubmit}>Submit</button> */}
-                <DownloadJSON data={data} fileName="testData" />
-              </fieldset>
+              <label>Primary Color (Hex):</label><br />
+              <input type="text" id="primarycolor" name="primarycolor" placeholder="#000000">
+              </input>
+              <button>Save</button>
+              {/* <DownloadJSON data={data} fileName="testData" /> */}
             </form>
           </div>
 
